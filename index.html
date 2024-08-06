@@ -3,29 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Document</title>
-    <script>
-    		async function getWeather() {
-		
-			const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&hourly=temperature_2m');
-		
-			const data = await response.json();
-			
-			const weatherElement = document.getElementById('weather');
-			const temperature = data.hourly.temperature_2m[0];
-
-			weatherElement.innerHTML = '<h2>Temperature: ${temperature}*C</h2>'; 
-															          
-			}
-    </script>
-
 </head>
 <body>
-    <h1>Weather Forcast</h1>
+
+    <header>
+        <h1>It's Raining Facts and Dogs!</h1>
+    </header>
+    <div id="weather-container">
+        <h2>Weather Search Area</h2>
+        <input type="text" placeholder="Austin" />
+    </div>
+    <div id="fact-generator-container">
+        <h2>Dog Fact Generator</h2>
+        <button type="button"></button>
+    </div>
+    <script src="./assets/js/style.js"></script>
+
+    <h3>Weather Forcast</h3>
     <pre id="weather">Loading...</pre> 
     <script>
-    	getWeather();
-    </script> 
-    
+	getWeather();
+     </script>
 </body>
 </html>
