@@ -1,5 +1,5 @@
 // Define the API URL
-const apiUrl = 'https://dogapi.dog/docs/api-v2';
+const apiUrl = 'https://dogapi.dog/api/v2/facts';
 
 // Make a GET request
 fetch(apiUrl)
