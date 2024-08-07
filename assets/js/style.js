@@ -15,6 +15,7 @@ fetch(apiUrl)
   .catch(error => {
     console.error('Error:', error);
   });
+<<<<<<< Updated upstream
 
 	//Weather Function Uses Tokyo Japan as a placeholder
 
@@ -30,3 +31,5 @@ fetch(apiUrl)
 			weatherElement.innerHTML = `<h4>Temperature: ${temperature}°C</h4>`; 
 
 	}
+=======
+>>>>>>> Stashed changes
