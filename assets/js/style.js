@@ -1,6 +1,8 @@
 // Define the API URL
 const apiUrl = 'https://dogapi.dog/api/v2/facts';
 
+const weatherMan = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m';
+
 // Make a GET request
 fetch(apiUrl)
   .then(response => {
@@ -15,6 +17,7 @@ fetch(apiUrl)
   .catch(error => {
     console.error('Error:', error);
   });
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 
 	//Weather Function Uses Tokyo Japan as a placeholder
@@ -33,3 +36,5 @@ fetch(apiUrl)
 	}
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> a1b25725d7360c588936d9b4cfc9c3f2005961ef
