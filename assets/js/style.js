@@ -118,5 +118,4 @@ const cities = [
 
 			weatherElement.innerHTML = `<h4>Tokyo, Japan Temperature: ${temperature}°F</h4>`; 
 
-	}
-  });
+	};
