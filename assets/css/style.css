@@ -3,28 +3,31 @@
     padding: 0;
     box-sizing: border-box;
     background-color: #dcdcdc
+    /*background-color: lightsteelblue;*/
 }
 
 header {
     color: #fff;
-    background-color: #b70e0e;
+    background-color: #b70e0e; /*lightslategrey;*/
     border-color: #454d55;
 }
 
 header {
     display: flex;
     color: white;
-    background-color: #3C99DC;
+    background-color: #3C99DC; /*lightslategrey;*/
     justify-content: space-between;
     align-items: center;
-    padding: 2%;
+    padding: 2%; /*padding: 1%*/
+    /*line-height: 100px*/
 }
 
 h1 {
     flex-basis: 100%;
     min-height: 100px;
-    background-color: #3C99DC;
+    background-color: #3C99DC; /*lightslategrey;*/
     text-align: center;
+    /*color: honeydew*/
 }
 
 .weather-container {
@@ -32,7 +35,7 @@ h1 {
 }
 
 .box {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     border: 5px solid black;
     min-height: 180px;
@@ -40,11 +43,35 @@ h1 {
     font-size: 0.9rem;
     object-fit: fill;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; /*justify-content: space-around;*/
     margin: 7px;
+    /*align-content: flex-start;*/
+    /*width: 45%;*/
 }
 
+/*p {
+    font-family: monospace;
+}*/
 
+/*#fact-generator-container {
+    justify-content: space-around;
+    padding: 5px;
+}*/
+
+/*#weather-container {
+    justify-content: space-around;
+    padding: 5px;
+}*/
+
+/*h3 {
+    padding: 8px;
+}*/
+
+/*h4 {
+    padding: 8px;
+}*/
+
+/**/
 
 @media screen and (max-width: 768px) {
     .work {
