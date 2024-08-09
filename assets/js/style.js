@@ -1,5 +1,3 @@
-// Define the API URL
-const apiUrl = 'https://dogapi.dog/api/v2/facts';
 
 const weatherMan = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m';
 
@@ -25,26 +23,35 @@ const result = fetch(weatherMan)
     console.error('Error:', error);
 });
 
-const dogFact = fetch(apiUrl)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log(data);
-    const facts = data;
-    const dogResult = facts.data[0].attributes.body;
-    // grab the HTML element
-    const factEl = document.querySelector("#dog-facts");
-
-    // Display the data
-    factEl.textContent = dogResult;
-  })
- // .catch(error => {
-   // console.error('Error:', error);
- // });
+document.addEventListener('DOMContentLoaded', () => {
+	const doggButton = document.getElementById('dogButton');
+	const fetchDogFacts = () => {
+	  const apiUrl = 'https://dogapi.dog/api/v2/facts';
+	  fetch(apiUrl)
+		.then(response => {
+		  if (!response.ok) {
+			throw new Error('error');
+		  }
+		  return response.json();
+		})
+		.then(data => {
+		  console.log(data);
+		  if (data.data && data.data.length > 0 && data.data[0].attributes && data.data[0].attributes.body) {
+			const dogResult = data.data[0].attributes.body;
+			const factEl = document.getElementById('dog-facts');
+			if (factEl) {
+			  factEl.textContent = dogResult;
+			}
+		  }
+		})
+	};
+	if (doggButton) {
+	  doggButton.addEventListener('click', () => {
+		fetchDogFacts();
+	  });
+	  fetchDogFacts();
+	}
+  });
 
 
 
@@ -160,7 +167,5 @@ const cities = [
 			weatherElement.innerHTML = `<h4>${cities[CityArrayIndex].name}, UnitedStates: ${temperature}°F</h4>`; 
 
 
-	}
-
-
+         }
 
