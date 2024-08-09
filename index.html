@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <script src="./assets/js/style.js"></script>
+    <title>Document</title>
     <title>ProjectOne</title>
 </head>
 <body>
@@ -14,21 +16,29 @@
     <div class="box" id="weather-container">
         <h2>Weather Search Area</h2>
         <select name ="city" id="city">
-		<option value="Autstin">Austin</option>
+		<option value="Select">Please Select City</option>
+		<option value="Austin">Austin</option>
 		<option value="NewYork">NewYork</option>
 		<option value="LosAngeles">LosAngeles</option>
 		<option value="Chicago">Chicago</option>
 	</select>
+
+	<p id="selectedCity">Please select a city.</p>
+	
+
     <p id="weather-result"></p>
+
     </div>
     <div class="box" id="fact-generator-container">
-        <h2>Dog Fact Generator</h2>
+        <h2>Dog Fact Generator - (click the dog)</h2>
+        <button id="dogButton" class="dogButton" type="button">🐩</button>
         <p id="dog-facts"></p>
     </div>
-    <script src="./assets/js/style.js"></script>
+    
 
     <h3>Weather Forcast</h3>
     <pre id="weather">Loading...</pre> 
+
     <script>
 	getWeather();
      </script>
