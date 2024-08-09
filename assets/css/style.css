@@ -1,5 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #dcdcdc
+}
+
 header {
     color: #fff;
     background-color: #b70e0e;
     border-color: #454d55;
 }
+
+header {
+    display: flex;
+    color: white;
+    background-color: #3C99DC;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+}
+
+h1 {
+    flex-basis: 100%;
+    min-height: 100px;
+    background-color: #3C99DC;
+    text-align: center;
+}
+
+.weather-container {
+    box-sizing: border-box;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid black;
+    min-height: 180px;
+    max-height: 180px;
+    font-size: 0.9rem;
+    object-fit: fill;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 7px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .work {
+      flex-direction: column;
+    }
+  }
