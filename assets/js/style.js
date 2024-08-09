@@ -53,13 +53,13 @@ const dogFact = fetch(apiUrl)
 const cities = [
 
 	{
-		name: 'New York',
+		name: 'NewYork',
 		latitude: 40.7128,
 		longitude: -74.0060,
 		timeZoneOffset: -4
 	},
 	{
-		name: 'Los Angeles',
+		name: 'LosAngeles',
 		latitude: 34.0522,
 		longitude: -118.2437,
 		timeZoneOffset: -7
@@ -71,15 +71,49 @@ const cities = [
 		timeZoneOffset: -5
 	},
 	{
-		name: 'chicago',
-		latitude: 30.2672,
-		longitude: -97.7431,
+		name: 'Chicago',
+		latitude: 41.8781,
+		longitude: -87.698,
 		timeZoneOffset: -5
 	}
 ]
 
 
 	console.log(cities);
+
+	let CityArrayIndex = -1;
+
+		document.addEventListener('DOMContentLoaded', ()=>{
+		
+
+		const citySelect = document.getElementById('city');
+		
+		const selectedCityParagraph = document.getElementById('selectedCity');
+
+		
+		citySelect.addEventListener('change', () => {
+
+		const selectedCity = citySelect.value;
+
+	
+		for (let i = 0; i < cities.length; i++){
+
+			if (selectedCity == cities[i].name){
+				CityArrayIndex = i;
+				console.log("ArrayIndex: ", CityArrayIndex);
+				break;//Exit the loop when the cites array name equals the selected city box
+			}
+
+		}
+
+				
+		
+		selectedCityParagraph.textContent = `You selected: ${selectedCity}`;
+
+		getWeather();
+		});
+	
+		});
 
 
 
@@ -93,29 +127,40 @@ const cities = [
 			
 			const utcHours = now.getUTCHours();
 
-			const TKYO_TimeZoneOffSet = 9; //Tokyo Japan UTC+9
+			const TimeZoneOffSet = cities[CityArrayIndex].timeZoneOffset; // Gets Time zone from Cities Array
+			
+			const LATITUDE = cities[CityArrayIndex].latitude; // Gets Latitude from Cities Array
 
-			let TKYO_Hours = utcHours + TKYO_TimeZoneOffSet;
+			const LONGITUDE = cities[CityArrayIndex].longitude; // Gets Longitude from cities Array
+
+			let SelectedCity_Hours = utcHours + TimeZoneOffSet; // Corrects Time zone offest
 
 			// Handle overflow to ensure hours stay within 0-23 range
 			
-			if(TKYO_Hours >=24){
-				TKYO_Hours -=24; //Adjust for positive overflow
+			if(SelectedCity_Hours >=24){
+				SelectedCity_Hours -=24; //Adjust for positive overflow
 			}
+			if(SelectedCity_Hours < 0){
+				SelectedCity_Hours +=24; //Adjust for negative overflow
+			}	
 
-			console.log("Tokyo Hours: ", TKYO_Hours);
+			console.log("Seleted City Hours: ", SelectedCity_Hours);
 
 
 
 
-			const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&hourly=temperature_2m&temperature_unit=fahrenheit');
-		
+			const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${LATITUDE}&longitude=${LONGITUDE}&hourly=temperature_2m&temperature_unit=fahrenheit`);
+			console.log(response);	
 			const data = await response.json();
 			
 			const weatherElement = document.getElementById('weather');
-			const temperature = data.hourly.temperature_2m[TKYO_Hours];
+			const temperature = data.hourly.temperature_2m[SelectedCity_Hours];
 
 
-			weatherElement.innerHTML = `<h4>Tokyo, Japan Temperature: ${temperature}°F</h4>`; 
+			weatherElement.innerHTML = `<h4>${cities[CityArrayIndex].name}, UnitedStates: ${temperature}°F</h4>`; 
+
+
+	}
 
 	};
+
