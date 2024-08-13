@@ -1,3 +1,14 @@
-# ProjectOne
+# Raining Facts and Dogs!
 
-The best part is solving bugs. It is also good when it is over. Being able to pull from third parties makes things easier. 
+## Description
+
+This app was created to display weather, and make it more enjoyable to check the weather by adding free dog facts. The user is able to select their city and see the temperature The user is able to interact with a button on the page and get a randomly selected dog fact. The two APIs used in this app are The Free Weather Open Source API and the Dog API. Tailwind UI was used to style the website and give it some flair. 
+
+## Table of Contents
+
+Screenshot:
+
+![Screenshot of deployed application](Screenshot.png)
+
+Link to application:
+
