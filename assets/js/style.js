@@ -332,3 +332,17 @@ const HourlyTimeForcast = [
 			 if (event.target == modal) {
 			 modal.style.display = "none";
 		 }};
+
+
+		 const submitBreedButton = document.getElementById('submitBreedButton');
+		 const dogBreedInput = document.getElementById('dogBreedInput');
+		 const favoriteBreedDisplay = document.getElementById('favoriteBreedDisplay');
+	 
+		 submitBreedButton.addEventListener('click', () => {
+			 const favoriteBreed = dogBreedInput.value.trim();
+			 if (favoriteBreed) {
+				 favoriteBreedDisplay.textContent = `An excellent choice: ${favoriteBreed}`;
+			 } else {
+				 favoriteBreedDisplay.textContent = 'Please enter a dog breed.';
+			 }
+		 });
