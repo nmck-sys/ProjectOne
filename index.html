@@ -16,7 +16,7 @@
     <div class="box" id="weather-container">
         <h2>Weather Search Area</h2>
         <select name ="city" id="city">
-		<option value="Select">Please Select City</option>
+		<option value="Nothing">Please Select City</option>
 		<option value="Austin">Austin</option>
 		<option value="NewYork">NewYork</option>
 		<option value="LosAngeles">LosAngeles</option>
@@ -38,10 +38,8 @@
 
     <h3>Weather Forcast</h3>
     <pre id="weather">Loading...</pre> 
-
-    <script>
-	getWeather();
-     </script>
+    <pre id="Hourly">Getting Forcast....</pre>
+    
      <script src="https://dogapi.dog/docs/api/v2"></script>
 </body>
 </html>

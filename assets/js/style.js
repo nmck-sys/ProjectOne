@@ -85,6 +85,129 @@ const cities = [
 	}
 ]
 
+const HourlyTimeForcast = [
+
+	{
+		Hour: 0,
+		Time: 'CurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 1,
+		Time: 'OneHourFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 2,
+		Time: '2HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 3,
+		Time: '3HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 4,
+		Time: '4HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{	
+		Hour: 5,
+		Time: '5HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 6,
+		Time: '6HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{	
+		Hour: 7,
+		Time: '7HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{	
+		Hour: 8,
+		Time: '8HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 9,
+		Time: '9HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{  
+		Hour: 10,
+		Time: '10HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{	
+		Hour: 11,
+		Time: '11HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 12,
+		Time: '12HoursFromCurrentTime',
+		Temperature: -1 
+	},
+	{
+		Hour: 13,
+		Time: '13HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 14,
+		Time: '14HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 15,
+		Time: '15HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 16,
+		Time: '16HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 17,
+		Time: '17HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 18,
+		Time: '18HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 19,
+		Time: '19HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 20,
+		Time: '20HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 21,
+		Time: '21HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 22,
+		Time: '22HoursFromCurrentTime',
+		Temperature: -1
+	},
+	{
+		Hour: 23,
+		Time: '23HoursFromCurrentTime',
+		Temperature: -1
+	}
+]
 
 	console.log(cities);
 
@@ -143,7 +266,8 @@ const cities = [
 			let SelectedCity_Hours = utcHours + TimeZoneOffSet; // Corrects Time zone offest
 
 			// Handle overflow to ensure hours stay within 0-23 range
-			
+				
+
 			if(SelectedCity_Hours >=24){
 				SelectedCity_Hours -=24; //Adjust for positive overflow
 			}
@@ -154,18 +278,41 @@ const cities = [
 			console.log("Seleted City Hours: ", SelectedCity_Hours);
 
 
-
-
 			const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${LATITUDE}&longitude=${LONGITUDE}&hourly=temperature_2m&temperature_unit=fahrenheit`);
 			console.log(response);	
 			const data = await response.json();
 			
 			const weatherElement = document.getElementById('weather');
-			const temperature = data.hourly.temperature_2m[SelectedCity_Hours];
+			const HourlyWeatherElement = document.getElementById('Hourly');
+		
+
+			// Clear previous content in HourlyWeatherElement
+			HourlyWeatherElement.innerHTML = '';
+
+			for (let i = 0; i < HourlyTimeForcast.length; i++){
+				HourlyTimeForcast[i].Hour = SelectedCity_Hours +i; //Update the hour and property and Temperature
+				HourlyTimeForcast[i].Temperature = data.hourly.temperature_2m[HourlyTimeForcast[i].Hour];
+				HourlyTimeForcast[i].Time = HourlyTimeForcast[i].Hour 
+
+				if(HourlyTimeForcast[i].Time >=24){
+					HourlyTimeForcast[i].Time -=24; //Adjust for positive overflow
+				}
 
 
-			weatherElement.innerHTML = `<h4>${cities[CityArrayIndex].name}, UnitedStates: ${temperature}°F</h4>`; 
+				let header = document.createElement('h2'); //Create a new header element
+
+				header.textContent = `Hour ${HourlyTimeForcast[i].Time}: ${HourlyTimeForcast[i].Temperature}°F`; //Set the content of the header to the temperature or other information
+				// Append the header to the HourlyWeatherElement
+				HourlyWeatherElement.appendChild(header);
 
 
-	};
+
+			}
+
+			weatherElement.innerHTML = `<h4>${cities[CityArrayIndex].name}, UnitedStates </h4>`;
+
+			
+			
+
+         }
 
