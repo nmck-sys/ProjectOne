@@ -4,7 +4,7 @@
     box-sizing: border-box;
     background-color: lightsteelblue;
 }
-
+/**/
 header {
     color: #fff;
     background-color: lightslategrey;
@@ -15,64 +15,64 @@ header {
     display: flex;
     color: white;
     background-color: lightslategrey;
-    justify-content: space-between;
-    align-items: center;
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
     padding: 1%;
     line-height: 100px;
 }
-
+/**/
 h1 {
     flex-basis: 100%;
     min-height: 100px;
     background-color: lightslategrey;
-    text-align: center;
+    /*text-align: center;*/
     color: honeydew;
 }
 
 .weather-container {
     box-sizing: border-box;
 }
-
+/**/
 .box {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     border: 5px solid black;
     min-height: 180px;
     max-height: 180px;
     font-size: 0.9rem;
     object-fit: fill;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 7px;
-    align-content: flex-start;
-    width: 45%;
+    /*flex-wrap: wrap;*/
+    /*justify-content: space-around;*/
+    /*margin: 7px;*/
+    /*align-content: flex-start;*/
+    /*width: 45%;*/
 }
 
 p {
-    font-family: monospace;
+    /*font-family: monospace;*/
 }
-
+/**/
 #fact-generator-container {
-    justify-content: space-around;
-    padding: 5px;
+    /*justify-content: space-around;*/
+    /*padding: 5px;*/
 }
 
 #weather-container {
-    justify-content: space-around;
-    padding: 5px;
+    /*justify-content: space-around;*/
+    /*padding: 5px;*/
 }
 
 h3 {
-    padding: 8px;
+    /*padding: 8px;*/
 }
-
+/**/
 h4 {
-    padding: 8px;
+    /*padding: 8px;*/
 }
 
 .dogButton {
-    border:none;
-    font-size: 50px;
+    /*border:none;*/
+    /*font-size: 50px;*/
 }
 
 @media screen and (max-width: 768px) {

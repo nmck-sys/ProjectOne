@@ -12,27 +12,28 @@
     <header class="p-3 flex justify-between items-center">
         <h1 class="text-center">🐶It's Raining Facts and Dogs!🐶</h1>
     </header>
-    <div class="box" id="weather-container" class="p-20 flex flex-wrap justify-around content-start w-2/5 m-7">
-        <h2>Weather Search Area</h2>
-        <select name ="city" id="city">
-		<option value="Select">Please Select City</option>
-		<option value="Austin">Austin</option>
-		<option value="NewYork">NewYork</option>
-		<option value="LosAngeles">LosAngeles</option>
-		<option value="Chicago">Chicago</option>
-	</select>
+    <div class="flex flex-row items-center justify-center">
+        <div class="box" id="weather-container" class="p-20 flex flex-wrap justify-around content-start w-2/5 m-7">
+            <h2>Weather Search Area</h2>
+            <select name ="city" id="city">
+		    <option value="Select">Please Select City</option>
+		    <option value="Austin">Austin</option>
+		    <option value="NewYork">NewYork</option>
+		    <option value="LosAngeles">LosAngeles</option>
+		    <option value="Chicago">Chicago</option>
+	    </select>
 
-	<p id="selectedCity" class="font-mono">Please select a city.</p>
+	    <p id="selectedCity" class="font-mono">Please select a city.</p>
 
-    <p id="weather-result" class="font-mono"></p>
+        <p id="weather-result" class="font-mono"></p>
 
+        </div>
+        <div class="box" id="fact-generator-container" class="p-20 flex flex-wrap justify-around w-2/5">
+            <h2>Dog Fact Generator - (click the dog)</h2>
+            <button id="dogButton" class="dogButton" type="button" class="border-none text-lg">🐩</button>
+            <p id="dog-facts" class="font-mono"></p>
+        </div>
     </div>
-    <div class="box" id="fact-generator-container" class="p-20 flex justify-around">
-        <h2>Dog Fact Generator - (click the dog)</h2>
-        <button id="dogButton" class="dogButton" type="button" class="border-none text-lg">🐩</button>
-        <p id="dog-facts" class="font-mono"></p>
-    </div>
-    
 
     <h3 class="p-8">Weather Forcast</h3>
     <pre id="weather">Loading...</pre> 
