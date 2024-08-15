@@ -55,10 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-	//Weather Function Uses Tokyo Japan as a placeholder
-        //Line 32 gets time in UTC from users computer
+	
 const cities = [
-
+//Stores geo-location data for cities
 	{
 		name: 'NewYork',
 		latitude: 40.7128,
@@ -86,7 +85,7 @@ const cities = [
 ]
 
 const HourlyTimeForcast = [
-
+//Stores hourly data for weather api
 	{
 		Hour: 0,
 		Time: 'CurrentTime',
@@ -257,6 +256,7 @@ const HourlyTimeForcast = [
 	}
 ]
 const DailyTimeForcast = [
+//Stores daily data for weather api
 
 	{
 		Day: 0,
@@ -308,6 +308,7 @@ const DailyTimeForcast = [
 
 		document.addEventListener('DOMContentLoaded', ()=>{
 		
+		//Takes User selection and assigns relevant city location data
 
 		const citySelect = document.getElementById('city');
 		
