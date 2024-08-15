@@ -25,9 +25,12 @@ const result = fetch(weatherMan)
 
 document.addEventListener('DOMContentLoaded', () => {
 	const doggButton = document.getElementById('dogButton');
+	//Selects the appropraite ID from the html document and turns it into a variable for use in Javascript
 	const fetchDogFacts = () => {
 	  const apiUrl = 'https://dogapi.dog/api/v2/facts';
+	  // Lets the Javascript know which API to pull from
 	  fetch(apiUrl)
+	  // Fetch request grabs the data from the API
 		.then(response => {
 		  if (!response.ok) {
 			throw new Error('error');
@@ -36,23 +39,26 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 		.then(data => {
 		  console.log(data);
+		  //My debugging tool
 		  if (data.data && data.data.length > 0 && data.data[0].attributes && data.data[0].attributes.body) {
 			const dogResult = data.data[0].attributes.body;
+			//extracts the data
 			const factEl = document.getElementById('dog-facts');
 			if (factEl) {
 			  factEl.textContent = dogResult;
+			  //Displays the data in text form
 			}
 		  }
 		})
 	};
 	if (doggButton) {
-	  doggButton.addEventListener('click', () => {
+		doggButton.addEventListener('click', () => {
+		  //Makes it possible for the user to trigger the event upon clicking
+		  fetchDogFacts();
+		});
 		fetchDogFacts();
-	  });
-	  fetchDogFacts();
-	}
-  });
-
+	  }
+	});
 
 
 	

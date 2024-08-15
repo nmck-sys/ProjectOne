@@ -8,7 +8,22 @@ This app was created to display weather, and make it more enjoyable to check the
 
 Screenshot:
 
-![Screenshot of deployed application](Screenshot.png)
+![Screenshot of deployed application](Screenshot.jpeg)
 
-Link to application:
+Link to application: https://nmck-sys.github.io/ProjectOne/
 
+## Credits
+
+Developers:
+
+Hayden Cook, James Greaney, and Noah McKinzie
+
+
+
+Resources:
+
+Tailwind CSS: https://tailwindcss.com/docs/installation
+
+Dog Facts API: https://dogapi.dog/docs/api-v2
+
+Free Open-Source Weather API: https://open-meteo.com/
