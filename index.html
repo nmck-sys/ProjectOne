@@ -13,7 +13,7 @@
         <h1 class="text-center">🐶It's Raining Facts and Dogs!🐶</h1>
     </header>
     <div class="flex flex-row items-center justify-center">
-        <div class="box" id="weather-container" class="p-20 flex flex-wrap justify-around content-start w-2/5 m-7">
+        <div class="box" id="weather-container" class="p-20 flex flex-wrap justify-around content-start m-7">
             <h2>Weather Search Area</h2>
             <select name ="city" id="city">
 		    <option value="Select">Please Select City</option>
@@ -27,16 +27,18 @@
 
         <p id="weather-result" class="font-mono"></p>
 
+        <pre id="weather">Loading...</pre>
+
         </div>
-        <div class="box" id="fact-generator-container" class="p-20 flex flex-wrap justify-around w-2/5">
+        <div class="box" id="fact-generator-container" class="p-20 flex flex-wrap justify-around">
             <h2>Dog Fact Generator - (click the dog)</h2>
             <button id="dogButton" class="dogButton" type="button" class="border-none text-lg">🐩</button>
             <p id="dog-facts" class="font-mono"></p>
         </div>
     </div>
 
-    <h3 class="p-8">Weather Forcast</h3>
-    <pre id="weather">Loading...</pre> 
+    <!--<h3 class="p-8">Weather Forcast</h3>-->
+    <!--<pre id="weather">Loading...</pre>-->
 
     <script>
 	getWeather();

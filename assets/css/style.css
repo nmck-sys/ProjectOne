@@ -4,7 +4,11 @@
     box-sizing: border-box;
     background-color: lightsteelblue;
 }
-/**/
+
+html, body {
+    height: 100%;
+}
+
 header {
     color: #fff;
     background-color: lightslategrey;
@@ -15,64 +19,46 @@ header {
     display: flex;
     color: white;
     background-color: lightslategrey;
-    /*justify-content: space-between;*/
-    /*align-items: center;*/
     padding: 1%;
     line-height: 100px;
 }
-/**/
+
 h1 {
     flex-basis: 100%;
     min-height: 100px;
     background-color: lightslategrey;
-    /*text-align: center;*/
     color: honeydew;
+    font-size: xx-large;
 }
 
 .weather-container {
     box-sizing: border-box;
 }
-/**/
+
 .box {
-    /*display: flex;*/
     flex-direction: column;
     border: 5px solid black;
-    min-height: 180px;
-    max-height: 180px;
+    min-height: 200px;
+    max-height: 300px;
     font-size: 0.9rem;
     object-fit: fill;
-    /*flex-wrap: wrap;*/
-    /*justify-content: space-around;*/
-    /*margin: 7px;*/
-    /*align-content: flex-start;*/
-    /*width: 45%;*/
+    width: 575px;
 }
 
-p {
-    /*font-family: monospace;*/
-}
-/**/
 #fact-generator-container {
-    /*justify-content: space-around;*/
-    /*padding: 5px;*/
+    text-align: center;
+    align-content: center;
+    line-height: 35px;
 }
 
 #weather-container {
-    /*justify-content: space-around;*/
-    /*padding: 5px;*/
+    text-align: center;
+    align-content: center;
+    line-height: 40px;
 }
 
-h3 {
-    /*padding: 8px;*/
-}
-/**/
-h4 {
-    /*padding: 8px;*/
-}
-
-.dogButton {
-    /*border:none;*/
-    /*font-size: 50px;*/
+.text-center {
+    font-size: xx-large;
 }
 
 @media screen and (max-width: 768px) {
