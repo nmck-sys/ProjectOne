@@ -2,29 +2,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #dcdcdc
+    background-color: lightsteelblue;
+}
+
+html, body {
+    height: 100%;
 }
 
 header {
     color: #fff;
-    background-color: #b70e0e;
+    background-color: lightslategrey;
     border-color: #454d55;
 }
 
 header {
     display: flex;
     color: white;
-    background-color: #3C99DC;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2%;
+    background-color: lightslategrey;
+    padding: 1%;
+    line-height: 100px;
 }
 
 h1 {
     flex-basis: 100%;
     min-height: 100px;
-    background-color: #3C99DC;
-    text-align: center;
+    background-color: lightslategrey;
+    color: honeydew;
+    font-size: xx-large;
 }
 
 .weather-container {
@@ -32,16 +36,46 @@ h1 {
 }
 
 .box {
-    display: flex;
     flex-direction: column;
     border: 5px solid black;
-    min-height: 180px;
-    max-height: 180px;
+    min-height: 290px;
+    max-height: 1350px; /*we set this so high that the box would extend when the larger information was requested*/
     font-size: 0.9rem;
     object-fit: fill;
-    flex-wrap: wrap;
+    width: 625px;
+    margin: 5px;
+}
+
+#fact-generator-container {
+    text-align: center;
+    align-content: center;
+    line-height: 35px;
+    align-self: flex-start; /*this let us set the second column at the top of the page instead of going to the center when the first column extended to show data*/
+}
+
+#weather-container {
+    text-align: center;
+    align-content: center;
+    line-height: 38px;
+}
+
+#weather-column {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: justify; /*this made all the data lines start at the same point so everything looked even*/
+    font-size: medium;
+}
+
+#favDogContainer {
+    margin: 45px;
+}
+
+.text-center {
+    font-size: xx-large;
+}
+
+.justify-center {
     justify-content: space-between;
-    margin: 7px;
 }
 
 .dogButton {
@@ -61,7 +95,7 @@ h1 {
     background-color: rgb(25, 123, 215, 0.4);
     background-color: rgba(25, 123, 215, 0.4);
 }
-  
+
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -94,4 +128,4 @@ h1 {
     .work {
       flex-direction: column;
     }
-  }
+}

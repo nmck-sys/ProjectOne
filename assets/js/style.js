@@ -17,7 +17,7 @@ const result = fetch(weatherMan)
     const weatherEl = document.querySelector("#weather-result");
 
     // Display the data
-    weatherEl.textContent = result;
+    //weatherEl.textContent = result;
   })
   .catch(error => {
     console.error('Error:', error);
