@@ -90,122 +90,215 @@ const HourlyTimeForcast = [
 	{
 		Hour: 0,
 		Time: 'CurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 1,
 		Time: 'OneHourFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 2,
 		Time: '2HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 3,
 		Time: '3HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 4,
 		Time: '4HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{	
 		Hour: 5,
 		Time: '5HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 6,
 		Time: '6HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{	
 		Hour: 7,
 		Time: '7HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{	
 		Hour: 8,
 		Time: '8HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 9,
 		Time: '9HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{  
 		Hour: 10,
 		Time: '10HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{	
 		Hour: 11,
 		Time: '11HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 12,
 		Time: '12HoursFromCurrentTime',
-		Temperature: -1 
+		Temperature: -1, 
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 13,
 		Time: '13HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 14,
 		Time: '14HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 15,
 		Time: '15HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 16,
 		Time: '16HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 17,
 		Time: '17HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 18,
 		Time: '18HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 19,
 		Time: '19HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 20,
 		Time: '20HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 21,
 		Time: '21HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 22,
 		Time: '22HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
 	},
 	{
 		Hour: 23,
 		Time: '23HoursFromCurrentTime',
-		Temperature: -1
+		Temperature: -1,
+		Humidity: -1,
+		Precipitation: -1
+	}
+]
+const DailyTimeForcast = [
+
+	{
+		Day: 0,
+		Time: 'CurrentTime',
+		TemperatureMax: -1,
+		TemperatureMin: -1
+	},
+	{
+		Day: 1,
+		Time: 'OneDayFromCurrentTime',
+		TemperatureMax: -1,
+		TemperatureMin: -1
+	},
+	{
+		Day: 2,
+		Time: '2DaysFromCurrentTime',
+		TemperatureMax: -1,
+		TemperatureMin: -1
+	},
+	{
+		Day: 3,
+		Time: '3DaysFromCurrentTime',
+		TemperatureMax: -1,
+		TemperatureMin: -1
+	},
+	{
+		Day: 4,
+		Time: '4DaysFromCurrentTime',
+		TemperatureMax: -1,
+		TemperatureMin: -1
+	},
+	{	
+		Day: 5,
+		Time: '5DaysFromCurrentTime',
+		TemperatureMax: -1,
+		TemperatureMin: -1
+	},
+	{
+		Day: 6,
+		Time: '6DaysFromCurrentTime',
+		TemperatureMax: -1,
+		TemperatureMin: -1
 	}
 ]
 
@@ -247,6 +340,11 @@ const HourlyTimeForcast = [
 
 
 
+
+
+
+
+
     		async function getWeather() {
 
 			const now = new Date();
@@ -278,21 +376,24 @@ const HourlyTimeForcast = [
 			console.log("Seleted City Hours: ", SelectedCity_Hours);
 
 
-			const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${LATITUDE}&longitude=${LONGITUDE}&hourly=temperature_2m&temperature_unit=fahrenheit`);
+			const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${LATITUDE}&longitude=${LONGITUDE}&hourly=temperature_2m,relative_humidity_2m,precipitation_probability&daily=temperature_2m_max,temperature_2m_min,rain_sum&temperature_unit=fahrenheit&precipitation_unit=inch`);
 			console.log(response);	
 			const data = await response.json();
 			
 			const weatherElement = document.getElementById('weather');
 			const HourlyWeatherElement = document.getElementById('Hourly');
+			const DailyWeatherElement = document.getElementById('Daily');
 		
 
-			// Clear previous content in HourlyWeatherElement
+			// Clear previous content in HourlyWeatherElement and Daily Weather Element
 			HourlyWeatherElement.innerHTML = '';
+			DailyWeatherElement.innerHTML = '';
 
 			for (let i = 0; i < HourlyTimeForcast.length; i++){
 				HourlyTimeForcast[i].Hour = SelectedCity_Hours +i; //Update the hour and property and Temperature
 				HourlyTimeForcast[i].Temperature = data.hourly.temperature_2m[HourlyTimeForcast[i].Hour];
 				HourlyTimeForcast[i].Time = HourlyTimeForcast[i].Hour 
+				HourlyTimeForcast[i].Humidity = data.hourly.relative_humidity_2m[HourlyTimeForcast[i].Hour];
 
 				if(HourlyTimeForcast[i].Time >=24){
 					HourlyTimeForcast[i].Time -=24; //Adjust for positive overflow
@@ -301,13 +402,29 @@ const HourlyTimeForcast = [
 
 				let header = document.createElement('h2'); //Create a new header element
 
-				header.textContent = `Hour ${HourlyTimeForcast[i].Time}: ${HourlyTimeForcast[i].Temperature}°F`; //Set the content of the header to the temperature or other information
+				header.textContent = `Hour ${HourlyTimeForcast[i].Time}: ${HourlyTimeForcast[i].Temperature}°F Humidity: ${HourlyTimeForcast[i].Humidity}%`; //Set the content of the header to the temperature or other information
 				// Append the header to the HourlyWeatherElement
 				HourlyWeatherElement.appendChild(header);
 
 
 
 			}
+
+			for (let i = 0; i < DailyTimeForcast.length; i++){
+				         if (i < data.daily.temperature_2m_max.length && i < data.daily.temperature_2m_min.length) {
+         				     	  DailyTimeForcast[i].TemperatureMax = data.daily.temperature_2m_max[i];
+            				          DailyTimeForcast[i].TemperatureMin = data.daily.temperature_2m_min[i];
+               				          DailyTimeForcast[i].Day = i; 
+
+              					  let header2 = document.createElement('h2');
+               					 header2.textContent = `Day ${DailyTimeForcast[i].Day}: Max ${DailyTimeForcast[i].TemperatureMax}°F, Min ${DailyTimeForcast[i].TemperatureMin}°F`;
+             				         DailyWeatherElement.appendChild(header2);
+           				} else {
+               					 console.warn(`Daily data not available for index ${i}`);
+           				 }
+
+			}
+
 
 			weatherElement.innerHTML = `<h4>${cities[CityArrayIndex].name}, UnitedStates </h4>`;
 
