@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> <!--this is where we linked the css stylesheet-->
     <script src="https://cdn.tailwindcss.com"></script> <!--added tailwind css link-->
     <title>It's Raining Facts and Dogs!</title>
 </head>
@@ -11,8 +11,8 @@
     <header class="p-3 flex justify-between items-center">
         <h1 class="text-center">🐶It's Raining Facts and Dogs!🐶</h1>
     </header>
-    <div class="flex flex-row items-center justify-center" id="big-div">
-        <div class="box" id="weather-container" class="p-20 flex flex-wrap justify-around content-start m-7">
+    <div class="flex flex-row items-center justify-center" id="big-div"> <!--this "big-div" is where we applied css to show the info in two columns rather than rows-->
+        <div class="box" id="weather-container" class="p-20 flex flex-wrap justify-around content-start m-7"> <!--this uses tailwinds to edit the css styles on the page-->
             <h2>Weather Search Area</h2>
             <select name ="city" id="city">
 		        <option value="Nothing">Please Select City</option>
@@ -26,8 +26,11 @@
 	
         <p id="weather-result" class="font-mono"></p>
 
-        <pre id="weather">Loading...</pre> 
-        <pre id="Hourly">Getting Forcast....</pre>
+        <pre id="weather">Getting Forecast...</pre>
+        <div id="weather-column"> <!--this div was created so we could display the temp and humidity beside each other within the weather column-->
+            <pre id="Hourly"></pre>
+            <pre id="Daily"></pre>
+        </div>
 
         </div>
         <div class="box" id="fact-generator-container" class="p-20 flex flex-wrap justify-around">
@@ -43,7 +46,7 @@
             </div>
         </div>
     </div>
-    
+    <!--the following will pop up an alert when the page loads, telling the user to click a button for a new fact.-->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -52,7 +55,7 @@
         </div>
     </div>
 
-    <script src="https://dogapi.dog/docs/api/v2"></script>
-    <script src="./assets/js/style.js"></script>
+    <script src="https://dogapi.dog/docs/api/v2"></script> <!--This links the dog facts API to the html-->
+    <script src="./assets/js/style.js"></script> <!--this links the HTML document and the style.js-->
 </body>
 </html>

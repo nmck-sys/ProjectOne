@@ -39,10 +39,10 @@ h1 {
     flex-direction: column;
     border: 5px solid black;
     min-height: 290px;
-    max-height: 1080px;
+    max-height: 1350px; /*we set this so high that the box would extend when the larger information was requested*/
     font-size: 0.9rem;
     object-fit: fill;
-    width: 575px;
+    width: 625px;
     margin: 5px;
 }
 
@@ -50,13 +50,20 @@ h1 {
     text-align: center;
     align-content: center;
     line-height: 35px;
-    align-self: flex-start;
+    align-self: flex-start; /*this let us set the second column at the top of the page instead of going to the center when the first column extended to show data*/
 }
 
 #weather-container {
     text-align: center;
     align-content: center;
     line-height: 38px;
+}
+
+#weather-column {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: justify; /*this made all the data lines start at the same point so everything looked even*/
+    font-size: medium;
 }
 
 #favDogContainer {
